@@ -1,0 +1,8 @@
+<div data-sly-use.cpt="script.js">
+    <h1>${cpt.title}</h1>
+    <div data-sly-test="${cpt.userInfo.role == 'author'}"><!-- assuming only one role per user-->
+		<div data-sly-list="${cpt.pageStack}">
+			<span> <a href ="${item.path}.html">${item.title}</a>/</span> <!-- would print a/b/c if you are on c which is within b within a -->
+		</div>
+    </div>
+</div>
